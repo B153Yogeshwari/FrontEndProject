@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { EnquiryServiceService } from 'src/app/shared/enquiry-service.service';
 
 @Component({
   selector: 'app-save-enquiry',
@@ -8,7 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SaveEnquiryComponent  {
 
-constructor(private fb:FormBuilder){
+constructor(private fb:FormBuilder,private enquiryservice:EnquiryServiceService){
 
 }
 saveForm:FormGroup;
@@ -25,4 +27,9 @@ ngOnInit(){
   })
 }
 
+saveEnquiry(){
+this.enquiryservice.saveEnquiry(this.saveForm.value).subscribe((response)=>{
+  alert(response)
+})
+}
 }

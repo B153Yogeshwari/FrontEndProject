@@ -13,14 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
     ViewEnquiryComponent
   ],
   imports: [
-    CommonModule
-  ],
-  exports: [
-    SaveEnquiryComponent,
+    CommonModule,
     FormsModule,
-    ViewEnquiryComponent,
+   
     ReactiveFormsModule,
     HttpClientModule
   ]
+  
 })
 export class EnquiryModule { }
