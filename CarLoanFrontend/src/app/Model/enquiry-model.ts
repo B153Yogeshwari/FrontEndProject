@@ -7,6 +7,6 @@ export class EnquiryModel {
     emailId : string;
     mobileNumber : number;
     adharNumber : number;
-    panCardNumber : number;
+    panCardNumber : string;
     
 }
