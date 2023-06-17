@@ -6,20 +6,18 @@ import { AppComponent } from './app.component';
 import { EnquiryModule } from './Module/enquiry/enquiry.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-<<<<<<< HEAD
 import { LoginComponent } from './Components/login/login.component';
-=======
-import { SavecustomerComponent } from './Model/ApplicationForm/savecustomer/savecustomer.component';
->>>>>>> 987709cf9f119ee7d466ea648e10177fb8ef0e80
+import { SavecustomerComponent } from './Module/ApplicationForm/savecustomer/savecustomer.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    LoginComponent
-=======
+
+    LoginComponent,
     SavecustomerComponent
->>>>>>> 987709cf9f119ee7d466ea648e10177fb8ef0e80
+
   ],
   imports: [
     BrowserModule,
