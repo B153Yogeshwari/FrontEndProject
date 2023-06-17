@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { EnquiryModule } from './Module/enquiry/enquiry.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SavecustomerComponent } from './Model/ApplicationForm/savecustomer/savecustomer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SavecustomerComponent
   ],
   imports: [
     BrowserModule,

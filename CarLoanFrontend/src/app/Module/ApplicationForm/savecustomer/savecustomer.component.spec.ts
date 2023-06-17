@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewEnquiryComponent } from './view-enquiry.component';
+import { SavecustomerComponent } from './savecustomer.component';
 
-describe('ViewEnquiryComponent', () => {
-  let component: ViewEnquiryComponent;
-  let fixture: ComponentFixture<ViewEnquiryComponent>;
+describe('SavecustomerComponent', () => {
+  let component: SavecustomerComponent;
+  let fixture: ComponentFixture<SavecustomerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewEnquiryComponent ]
+      declarations: [ SavecustomerComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ViewEnquiryComponent);
+    fixture = TestBed.createComponent(SavecustomerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
