@@ -7,7 +7,7 @@ export class AllPersonalDocuments {
 	 adharCard:any;
 	 salarySlip:any;
 	 incomeTaxReturn:any;
-	 //bankCheque:any;
-	// bankStatements:any;
+	 bankCheque:any;
+	 bankStatements:any;
 	
 }
