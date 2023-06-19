@@ -1,77 +1,91 @@
-
 <section class="h-100 bg-dark">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col">
-          <div class="card card-registration my-4">
-            <div class="row g-0">
-              <div class="col-xl-6 d-none d-xl-block">
-                <img src="assets/images/car-loan1.jpg"
-              
-                  alt="Sample photo" class="img-fluid"
-                  style="border-top-left-radius: .100rem; border-bottom-left-radius: .100rem;" />
-              </div>
-             
-              <div class="col-xl-6">
-                
-                <div class="card-body p-md-5 text-black">
-                  <h3 class="mb-5 text-uppercase">Car Loan Enquiry Details</h3>
-                  <form [formGroup]="saveForm"  (ngSubmit)="saveEnquiry()">
+  <div class="container py-5 h-100">
+    
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img src="assets/images/car-loan1.jpg" alt="Sample photo" class="img-fluid"
+                style="border-top-left-radius: .100rem; border-bottom-left-radius: .100rem;" />
+            </div>
+
+            <div class="col-xl-6">
+
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">Car Loan Enquiry Details</h3>
+
+                <form [formGroup]="saveForm" (ngSubmit)="saveUser()">
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="text" id="form3Example1m" formControlName="firstName"  class="form-control form-control-lg" />
+                        <input type="text" id="form3Example1m" formControlName="firstName" class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example1m">First name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="firstName && firstName.invalid && firstName.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="text" id="form3Example1n" formControlName="lastName" class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example1n">Last name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="lastName && lastName.invalid && lastName.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
-  
+
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="number" id="form3Example1m1" formControlName="age" class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example1m1">Age</label>
+                        <br>
+                        <span style="color: red;" *ngIf="age && age.invalid && age.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="text" id="form3Example1n1" formControlName="emailId" class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example1n1">E-mail ID</label>
+                        <br>
+                        <span style="color: red;" *ngIf="emailId && emailId.invalid && emailId.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
-  
+
                   <div class="form-outline mb-4">
-                    <input type="number" id="form3Example8" formControlName="mobileNumber"  class="form-control form-control-lg" />
+                    <input type="number" id="form3Example8" formControlName="mobileNumber" class="form-control form-control-lg" />
                     <label class="form-label" for="form3Example8">Mobile Number</label>
-                  </div>
-  
-                  <div class="form-outline mb-4">
-                    <input type="number" id="form3Example8" formControlName="adharNumber"  class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example8">Adhar Number</label>
+                    <br>
+                    <span style="color: red;" *ngIf="mobileNumber && mobileNumber.invalid && mobileNumber.touched">This field is required</span>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="text" id="form3Example8" formControlName="panCardNumber" class="form-control form-control-lg" />
-                    <label class="form-label" for="form3Example8">Pancard Number</label>
+                    <input type="number" id="form3Example9" formControlName="adharNumber" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example9">Adhar Number</label>
+                    <br>
+                    <span style="color: red;" *ngIf="adharNumber && adharNumber.invalid && adharNumber.touched">This field is required</span>
                   </div>
-                  
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example10" formControlName="panCardNumber" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example10">Pancard Number</label>
+                    <br>
+                    <span style="color: red;" *ngIf="panCardNumber && panCardNumber.invalid && panCardNumber.touched">This field is required</span>
+                  </div>
+
                   <div class="d-flex justify-content-end pt-3">
                     <button type="button" class="btn btn-light btn-lg">Reset all</button>
-                    <button type="submit" class="btn btn-warning btn-lg ms-2">Submit form</button>
+                    <button [disabled]="!saveForm.valid" type="submit" class="btn btn-primary btn-lg ms-2">Submit form</button>
                   </div>
-                  </form>
-                </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
