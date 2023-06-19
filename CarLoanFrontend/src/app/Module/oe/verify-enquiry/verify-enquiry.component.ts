@@ -3,13 +3,13 @@ import { EnquiryModel } from 'src/app/Model/enquiry-model';
 import { EnquiryServiceService } from 'src/app/shared/enquiry-service.service';
 
 @Component({
-  selector: 'app-view-enquiry',
-  templateUrl: './view-enquiry.component.html',
-  styleUrls: ['./view-enquiry.component.css']
+  selector: 'app-verify-enquiry',
+  templateUrl: './verify-enquiry.component.html',
+  styleUrls: ['./verify-enquiry.component.css']
 })
-export class ViewEnquiryComponent {
+export class VerifyEnquiryComponent {
 
-constructor(public es:EnquiryServiceService){}
+  constructor(public es:EnquiryServiceService){}
 elist:EnquiryModel[]
   ngOnInit(){
     this.es.viewEnquiry().subscribe((em:EnquiryModel[])=>

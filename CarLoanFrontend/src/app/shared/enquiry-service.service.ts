@@ -13,4 +13,8 @@ export class EnquiryServiceService {
    return this.http.post("http://localhost:9191/enquiry/savedata",e,{responseType:'text' as 'json'})
 
   }
+
+  viewEnquiry(){
+    return this.http.get("http://localhost:9191/enquiry/getalldata")
+  }
 }

@@ -5,10 +5,14 @@ export class UserRoles {
       {
 
         re:[
-            {lable:'fill Enquiry',path:'fill_Enquiry'},
-            {lable:'view Enquiry',path:'view_Enquiry'},
-            {lable:'Send Reject Mail',path:'reject_mail'},
-            {lable:'Send Sanction Mail', path:'sanction_mail'}
+            
+            {lable:'view Enquiry',path:'view_Enquiry'}
+            
+        ],
+
+        oe:[
+          {label: 'Check cibil', path : 'check_cibil'},
+          {label: 'Verify Enquiry', path : 'verify_enquiry'}
         ]
 
       }

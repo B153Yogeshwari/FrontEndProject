@@ -9,6 +9,10 @@ const routes: Routes = [
   },
   {
     path : 'login', component : LoginComponent
+  },
+  {
+    path : 're', loadChildren : ()=>import('src/app/Module/re/re.module')
+                                .then(m=>m.ReModule)
   }
 ];
 
@@ -17,3 +21,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
