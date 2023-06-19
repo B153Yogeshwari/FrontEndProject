@@ -1,0 +1,499 @@
+
+<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            
+            <div class="card-body p-4 p-md-5">
+              <form class="px-md-2" [formGroup]="saveCustomer" >
+              <!-- first Form of Customer Details -->
+                <div *ngIf="step == 0">
+              
+  
+    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Personal Information</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+    
+                      <div class="form-outline">
+                        <input type="text" id="firstName" formControlName="customerFirstName" class="form-control form-control-lg" />
+                        <label class="form-label" for="firstName">First Name</label>
+                      </div>
+    
+                    </div>
+                    <div class="col-md-4 mb-4">
+    
+                      <div class="form-outline">
+                        <input type="text" id="lastName" formControlName="customerMiddleName" class="form-control form-control-lg" />
+                        <label class="form-label" for="lastName">Middle Name</label>
+                      </div>
+    
+                    </div>
+                    <div class="col-md-4 mb-4">
+    
+                        <div class="form-outline">
+                          <input type="text" id="lastName" formControlName="customerLastName" class="form-control form-control-lg" />
+                          <label class="form-label" for="lastName">Last Name</label>
+                        </div>
+      
+                      </div>
+                  </div>
+    
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline datepicker">
+                      <input type="date" class="form-control" formControlName="customerDateOfBirth" id="exampleDatepicker1" />
+                      <label for="exampleDatepicker1" class="form-label">Birthday</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+
+                    <h6 class="mb-2 pb-1">Gender: </h6>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" formControlName="gender" type="radio" name="inlineRadioOptions" id="femaleGender"
+                        value="option1" checked />
+                      <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" formControlName="gender" type="radio" name="inlineRadioOptions" id="maleGender"
+                        value="option2" />
+                      <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" formControlName="gender" type="radio" name="inlineRadioOptions" id="otherGender"
+                        value="option3" />
+                      <label class="form-check-label" for="otherGender">Other</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+  
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+    
+                      <div class="form-outline">
+                        <input type="tel" id="mobileno" formControlName="customerMobileNumber" class="form-control form-control-lg" />
+                        <label class="form-label" for="mobileno">Mobile No</label>
+                      </div>
+    
+                    </div>
+                    <div class="col-md-6 mb-4">
+    
+                      <div class="form-outline">
+                        <input type="tel"  formControlName="customerAdditionalMobileNumber" class="form-control form-control-lg" />
+                        <label class="form-label">Additional Mobile No</label>
+                      </div>
+    
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+    
+                      <div class="form-outline">
+                        <input type="text" formControlName="customerPanCard" class="form-control form-control-lg" />
+                        <label class="form-label" >PanCard No</label>
+                      </div>
+    
+                    </div>
+                    <div class="col-md-6 mb-4">
+    
+                      <div class="form-outline">
+                        <input type="number" formControlName="customerAdharNumber"  class="form-control form-control-lg" />
+                        <label class="form-label">Adhar No</label>
+                      </div>
+    
+                    </div>
+                  </div>
+    
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+    
+                      <div class="form-outline">
+                        <input type="text" formControlName="customerQualification" class="form-control form-control-lg" />
+                        <label class="form-label" >Qualification</label>
+                      </div>
+    
+                    </div>
+                    <div class="col-md-6 mb-4">
+    
+                        <div class="form-outline">
+                            <input type="email" id="emailAddress" formControlName="customerEmailId" class="form-control form-control-lg" />
+                            <label class="form-label" for="emailAddress">Email</label>
+                          </div>
+    
+                    </div>
+                  </div>
+    
+                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                  <div class="col-md-6">
+  
+                    <div class="form-outline">
+                      <input type="number" formControlName="customerTotalLoanRequired" class="form-control" />
+                      <label class="form-label" >Total Loan Required</label>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                
+               
+              
+            </div>
+            <!-- second form Address details -->
+              <div *ngIf="step == 1" formGroupName="customerAddress">
+                
+                  <h1 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Address Details</h1>
+                  <div class="form-outline mb-4">
+                    <input type="number" formControlName="customerAddressId" class="form-control" />
+                    <label class="form-label">Address Id</label>
+                  </div>
+                  <div formGroupName="permanentAddress">
+                    <!-- permanent address group -->
+                  <h4>Permanent Address :</h4>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" formControlName="permanentAddressId"   class="form-control form-control-lg" />
+                        <label class="form-label">Permanent Address Id</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" formControlName="permanentHouseNumber"  class="form-control form-control-lg" />
+                        <label class="form-label">House Number</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="permanentStreetName" class="form-control form-control-lg" />
+                        <label class="form-label">Street Name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="permanentAreaName" class="form-control form-control-lg" />
+                        <label class="form-label">Area Name</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+  
+                      <select class="select" formControlName="permanentState">
+                        <option value="1">Select State</option>
+                        <option value="2">Maharashtra</option>
+                        <option value="3">Goa</option>
+                        <option value="4">Uttar Pradesh</option>
+                        <option value="5">Madhya Pradesh</option>
+                      </select>
+  
+                    </div>
+                    <div class="col-md-6 mb-4">
+  
+                      <select class="select" formControlName="permanentState">
+                        <option value="1">Select District</option>
+                        <option value="2">Akola</option>
+                        <option value="3">Amravati</option>
+                        <option value="4">Nagpur</option>
+                        <option value="5">Pune</option>
+                        <option value="5">Mumbai</option>
+                      </select>
+  
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="permanentCityName" class="form-control form-control-lg" />
+                        <label class="form-label">City Name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" formControlName="permanentPincode" class="form-control form-control-lg" />
+                        <label class="form-label">pincode</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="checkbox" id="checkBox"> Same as permanent address
+                 </div>
+                 </div>
+                 <div formGroupName="localAddress">
+                  <!-- comment Address group -->
+                  <h4>Communication Address :</h4>
+                  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" formControlName="localAddressId"  class="form-control form-control-lg" />
+                        <label class="form-label">Local Address Id</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" formControlName="localHouseNumber" class="form-control form-control-lg" />
+                        <label class="form-label">House Number</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text"  formControlName="localStreetName" class="form-control form-control-lg" />
+                        <label class="form-label">Street Name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="localAreaName" class="form-control form-control-lg" />
+                        <label class="form-label">Area Name</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+  
+                      <select class="select" formControlName="localState">
+                        <option value="1">Select State</option>
+                        <option value="2">Maharashtra</option>
+                        <option value="3">Goa</option>
+                        <option value="4">Uttar Pradesh</option>
+                        <option value="5">Madhya Pradesh</option>
+                      </select>
+  
+                    </div>
+                    <div class="col-md-6 mb-4">
+  
+                      <select class="select" formControlName="localDistrict">
+                        <option value="1">Select District</option>
+                        <option value="2">Akola</option>
+                        <option value="3">Amravati</option>
+                        <option value="4">Nagpur</option>
+                        <option value="5">Pune</option>
+                        <option value="5">Mumbai</option>
+                      </select>
+  
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="localCityName" class="form-control form-control-lg" />
+                        <label class="form-label">City Name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" formControlName="localPincode" class="form-control form-control-lg" />
+                        <label class="form-label">pincode</label>
+                      </div>
+                    </div>
+                   
+                  </div>
+             </div>
+            </div>
+            <!-- account Details and gurantor form -->
+            <div *ngIf="step == 2" >
+            
+                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Account Details</h3>
+                <div formGroupName="accountDetails">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" formControlName="accountId" class="form-control form-control-lg" />
+                        <label class="form-label" >Account Id</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" formControlName="accountNumber" class="form-control form-control-lg" />
+                        <label class="form-label">Account Number</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="accountHolderName" class="form-control form-control-lg" />
+                        <label class="form-label">Account Holder Name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="accountType"  class="form-control form-control-lg" />
+                        <label class="form-label">Account Type</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="bankName"  class="form-control form-control-lg" />
+                        <label class="form-label">Bank Name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="iFSCCode" class="form-control form-control-lg" />
+                        <label class="form-label">IFSC Code</label>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Gurantors Details</h3>
+                  <div formGroupName="gurantorDetails">
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" formControlName="guarantorId" class="form-control form-control-lg" />
+                        <label class="form-label">Gurantor Id</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="guarantorName"  class="form-control form-control-lg" />
+                        <label class="form-label">Gurantor Name</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="date" formControlName="guarantorDateOfBirth" class="form-control form-control-lg" />
+                        <label class="form-label">Birthday</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="guarantorRelationshipWithCustomer" class="form-control form-control-lg" />
+                        <label class="form-label" >Relationship With Customer</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="tel" formControlName="guarantorMobileNumber" class="form-control form-control-lg" />
+                        <label class="form-label">Mobile Number</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number" formControlName="guarantorAdharCardNo"  class="form-control form-control-lg" />
+                        <label class="form-label">AdharCard Number</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" formControlName="guarantorJobDetails" class="form-control form-control-lg" />
+                        <label class="form-label">Occupation</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <textarea  class="form-control form-control-lg" formControlName="guarantorAddress" ></textarea>
+                        <label class="form-label">Address</label>
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+            </div>
+          <!-- customer document attachment -->
+            <div *ngIf="step !=2 && step == 3">
+              <div formGroupName="documents">
+               
+                    <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Customers Documents</h3>
+                    <div class="form-outline mb-4">
+                      <input type="number"  class="form-control" />
+                      <label class="form-label">Document Id</label>
+                    </div>
+                    
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+        
+                          <div class="form-group">
+                            <input type="file"  class="form-control-file" (change)="onchangephoto($event)" />
+                            <label class="form-label" >Photo</label>
+                          </div>
+        
+                        </div>
+                        <div class="col-md-6 mb-4">
+        
+                          <div class="form-group">
+                            <input type="file" class="form-control-file" (change)="onchangesignature($event)" />
+                            <label class="form-label">Signature</label>
+                          </div>
+        
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+        
+                          <div class="form-group">
+                            <input type="file"  class="form-control-file" (change)="onchangeaddressproof($event)" />
+                            <label class="form-label" >Address Proof</label>
+                          </div>
+        
+                        </div>
+                        <div class="col-md-6 mb-4">
+        
+                          <div class="form-group">
+                            <input type="file" class="form-control-file" (change)="onchangepancard($event)" />
+                            <label class="form-label">PanCard</label>
+                          </div>
+        
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+        
+                          <div class="form-group">
+                            <input type="file"  class="form-control-file" (change)="onchangeadharcard($event)" />
+                            <label class="form-label" >AdharCard</label>
+                          </div>
+        
+                        </div>
+                        <div class="col-md-6 mb-4">
+        
+                          <div class="form-group">
+                            <input type="file" class="form-control-file" (change)="onchangesalaryslip($event)" />
+                            <label class="form-label">Salary Slip</label>
+                          </div>
+        
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        
+                        <input type="file" class="form-control-file" (change)="onchangeincometaxreturn($event)" >
+                        <label>Income Tax Return</label>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="d-flex justify-content-end pt-3">
+                     
+                      
+                      <button type="button" *ngIf="step!=0" (click)="previous()" class="btn btn-secondary">Previous</button>
+                      <button type="button" *ngIf="step!=3" (click)="next()" class="btn btn-info">Next</button>
+                      <button type="button"  class="btn btn-warning">Submit</button>
+                    </div>
+                  
+                </form>
+            </div>            
+          </div>
+          </div>
+        </div>
+      </div>
+    
+  </section>

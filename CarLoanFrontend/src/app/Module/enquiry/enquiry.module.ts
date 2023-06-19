@@ -4,19 +4,22 @@ import { SaveEnquiryComponent } from './save-enquiry/save-enquiry.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ViewEnquiryComponent } from '../re/view-enquiry/view-enquiry.component';
+
 
 
 
 @NgModule({
   declarations: [
+<<<<<<< HEAD
     SaveEnquiryComponent,
+=======
+    SaveEnquiryComponent
+>>>>>>> 27d84b3d143afa8b4864083cd0c112c20248a539
 
   ],
   imports: [
     CommonModule,
     FormsModule,
-   
     ReactiveFormsModule,
     HttpClientModule
   ]
