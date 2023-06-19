@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ApplicationFormRoutingModule } from './application-form-routing.module';
+
+import { SavecustomerComponent } from './savecustomer/savecustomer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SavecustomerComponent
+  ],
   imports: [
     CommonModule,
-    ApplicationFormRoutingModule
+
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ApplicationFormModule { }

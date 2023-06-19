@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SaveEnquiryComponent } from './Module/enquiry/save-enquiry/save-enquiry.component';
 import { LoginComponent } from './Components/login/login.component';
+import { SavecustomerComponent } from './Module/application-form/savecustomer/savecustomer.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
   {
     path : 're', loadChildren : ()=>import('src/app/Module/re/re.module')
                                 .then(m=>m.ReModule)
-  }
+  },
+  {path:'custform',component:SavecustomerComponent}
 ];
 
 @NgModule({

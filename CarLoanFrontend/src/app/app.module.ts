@@ -7,7 +7,8 @@ import { EnquiryModule } from './Module/enquiry/enquiry.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './Components/login/login.component';
-import { SavecustomerComponent } from './Module/ApplicationForm/savecustomer/savecustomer.component';
+import { ApplicationFormModule } from './Module/application-form/application-form.module';
+
 
 
 
@@ -15,9 +16,9 @@ import { SavecustomerComponent } from './Module/ApplicationForm/savecustomer/sav
   declarations: [
     AppComponent,
     LoginComponent,
-    SavecustomerComponent,
+  
     LoginComponent,
-    SavecustomerComponent
+    
 
   ],
   imports: [
@@ -26,6 +27,7 @@ import { SavecustomerComponent } from './Module/ApplicationForm/savecustomer/sav
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ApplicationFormModule,
     FormsModule,
   ],
   providers: [],
