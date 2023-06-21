@@ -109,7 +109,7 @@ onchangeincometaxreturn(event:any){
   this.selectedincomtaxreturn=event.target.files[0];
 }
   step =0;
->>>>>>> c34d520fa31c064e2c0386da492b055a901b00dd
+
   
 constructor(private fb:FormBuilder) {
 }
