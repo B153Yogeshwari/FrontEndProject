@@ -8,15 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+
 @NgModule({
   declarations: [
-<<<<<<< HEAD
     SaveEnquiryComponent,
-=======
     SaveEnquiryComponent
->>>>>>> 27d84b3d143afa8b4864083cd0c112c20248a539
-
-  ],
+   ],
   imports: [
     CommonModule,
     FormsModule,
