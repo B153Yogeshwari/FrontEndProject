@@ -60,12 +60,10 @@ export class SaveEnquiryComponent {
   {
     return this.saveForm.get('panCardNumber');
   }
-<<<<<<< HEAD
+
   resetall(){
 this.saveForm.reset();
   }
-}
-=======
   saveEnquiry(){
     this.enquiryservice.saveEnquiry(this.saveForm.value).subscribe((response)=>{
       alert(response)
@@ -73,6 +71,8 @@ this.saveForm.reset();
      }
     
 }
+  
+
 
 
 // saveForm:FormGroup;
@@ -100,4 +100,4 @@ this.saveForm.reset();
 // }
 
  
->>>>>>> c34d520fa31c064e2c0386da492b055a901b00dd
+
