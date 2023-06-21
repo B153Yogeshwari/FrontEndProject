@@ -6,7 +6,7 @@
           <div class="card rounded-3">
             
             <div class="card-body p-4 p-md-5">
-              <form class="px-md-2" [formGroup]="saveCustomer" >
+              <form class="px-md-2" [formGroup]="saveCustomer" (ngSubmit)="saveCustomerData()" >
               <!-- first Form of Customer Details -->
                 <div *ngIf="step == 0">
               
@@ -54,19 +54,19 @@
                     <h6 class="mb-2 pb-1">Gender: </h6>
   
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" formControlName="gender" type="radio" name="inlineRadioOptions" id="femaleGender"
+                      <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="femaleGender"
                         value="option1" checked />
                       <label class="form-check-label" for="femaleGender">Female</label>
                     </div>
   
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" formControlName="gender" type="radio" name="inlineRadioOptions" id="maleGender"
+                      <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="maleGender"
                         value="option2" />
                       <label class="form-check-label" for="maleGender">Male</label>
                     </div>
   
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" formControlName="gender" type="radio" name="inlineRadioOptions" id="otherGender"
+                      <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="otherGender"
                         value="option3" />
                       <label class="form-check-label" for="otherGender">Other</label>
                     </div>
@@ -344,7 +344,7 @@
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <input type="text" formControlName="iFSCCode" class="form-control form-control-lg" />
+                        <input type="text" formControlName="ifscCode" class="form-control form-control-lg" />
                         <label class="form-label">IFSC Code</label>
                       </div>
                     </div>
@@ -486,7 +486,7 @@
                       
                       <button type="button" *ngIf="step!=0" (click)="previous()" class="btn btn-secondary">Previous</button>
                       <button type="button" *ngIf="step!=3" (click)="next()" class="btn btn-info">Next</button>
-                      <button type="button"  class="btn btn-warning">Submit</button>
+                      <button type="submit"  class="btn btn-warning">Submit</button>
                     </div>
                   
                 </form>

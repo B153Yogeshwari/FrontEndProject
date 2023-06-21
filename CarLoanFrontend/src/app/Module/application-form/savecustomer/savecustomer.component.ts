@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { CustomerServiceService } from 'src/app/shared/customer-service.service';
 
 @Component({
   selector: 'app-savecustomer',
@@ -15,7 +16,7 @@ export class SavecustomerComponent {
   selectedpancard:any;
   selectedsalaryslip:any;
   selectedincomtaxreturn:any;
- constructor(private fb:FormBuilder){
+ constructor(private fb:FormBuilder,private cs:CustomerServiceService){
 
  }
  ngOnInit(){
@@ -48,7 +49,7 @@ export class SavecustomerComponent {
   'accountId':[],'accountNumber':[],
   'accountHolderName':[''],
   'accountType':[''],
-  'iFSCCode':[''],
+  'ifscCode':[''],
   'bankName':['']
 }),
 'gurantorDetails':this.fb.group({
@@ -99,6 +100,23 @@ onchangeincometaxreturn(event:any){
     this.step--;
 }
 
+saveCustomerData(){
+  var customer=JSON.stringify(this.saveCustomer.value);
+  console.log(this.saveCustomer.value);
+  const formData=new FormData();
+  formData.append("photo",this.selectedphoto);
+  formData.append("signature",this.selectedsignature);
+  formData.append("panCard",this.selectedpancard);
+  formData.append("adharCard",this.selectedadharcard);
+  formData.append("addressProof",this.selectedaddressproof);
+  formData.append("salarySlip",this.selectedsalaryslip);
+  formData.append("incomeTaxReturn",this.selectedincomtaxreturn);
+  formData.append("allData",customer);
+  this.cs.saveCustomerData(formData).subscribe((response)=>{
+    alert(response)
+  })
+
+}
 
 
 
