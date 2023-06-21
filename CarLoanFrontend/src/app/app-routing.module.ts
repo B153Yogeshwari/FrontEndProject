@@ -1,21 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SaveEnquiryComponent } from './Module/enquiry/save-enquiry/save-enquiry.component';
+
 import { LoginComponent } from './Components/login/login.component';
-import { SavecustomerComponent } from './Module/application-form/savecustomer/savecustomer.component';
+
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { AboutusComponent } from './Components/aboutus/aboutus.component';
+import { EmicalculatorComponent } from './Components/emicalculator/emicalculator.component';
 
 const routes: Routes = [
   {
-    path : '', component : SaveEnquiryComponent, pathMatch:'full'
+    path:'',redirectTo:'dash',pathMatch:'full'
   },
   {
-    path : 'login', component : LoginComponent
-  },
-  {
-    path : 're', loadChildren : ()=>import('src/app/Module/re/re.module')
-                                .then(m=>m.ReModule)
-  },
-  {path:'custform',component:SavecustomerComponent}
+    path:'dash',component:DashboardComponent,
+    
+    children:[
+     
+      {
+        path:'aboutus',component:AboutusComponent
+      },
+      {
+        path:'emi',component:EmicalculatorComponent
+      },
+      {
+        path:'login', component:LoginComponent, children:[{
+          path:'re',loadChildren: ()=>import('src/app/Module/re/re.module').then(m=>m.ReModule)
+        }]
+      }
+    ]
+  }
 ];
 
 @NgModule({

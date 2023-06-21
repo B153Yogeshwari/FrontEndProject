@@ -23,7 +23,7 @@ export class LoginComponent {
     if(this.loginForm.controls['username'].value=="re" && this.loginForm.controls['password'].value=="re@123"){
       console.log("re");
       sessionStorage.setItem("userType", "re")
-      this.router.navigateByUrl("/dash/re")
+      this.router.navigateByUrl("/dash/login/re")
       
     }
     // else if(this.loginForm.controls['username'].value=="oe" && this.loginForm.controls['password'].value=="oe@123")
