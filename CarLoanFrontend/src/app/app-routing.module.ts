@@ -23,9 +23,7 @@ const routes: Routes = [
         path:'emi',component:EmicalculatorComponent
       },
       {
-        path:'login', component:LoginComponent, children:[{
-          path:'re',loadChildren: ()=>import('src/app/Module/re/re.module').then(m=>m.ReModule)
-        }]
+        path:'login', component:LoginComponent, 
       }
     ]
   }
