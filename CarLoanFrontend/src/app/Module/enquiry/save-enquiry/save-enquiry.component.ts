@@ -60,7 +60,44 @@ export class SaveEnquiryComponent {
   {
     return this.saveForm.get('panCardNumber');
   }
+<<<<<<< HEAD
   resetall(){
 this.saveForm.reset();
   }
 }
+=======
+  saveEnquiry(){
+    this.enquiryservice.saveEnquiry(this.saveForm.value).subscribe((response)=>{
+      alert(response)
+     })
+     }
+    
+}
+
+
+// saveForm:FormGroup;
+// ngOnInit(){
+//   this.saveForm=this.fb.group({
+//     'customerId':['', Validators.required],
+//     'firstName' : ['', Validators.required],
+//     'lastName' : ['', Validators.required],
+//     'age' : ['', Validators.required],
+//     'emailId' : ['', Validators.required, Validators.email],
+//     'mobileNumber' : ['', Validators.required, Validators.minLength(10)],
+//     'adharNumber' : ['', Validators.required, Validators.minLength(12)],
+//     'panCardNumber' : ['', Validators.required, Validators.minLength]
+//   })
+// }
+
+// saveUser()
+// {
+//   console.warn(this.saveForm.value);
+// }
+
+// get customerId()
+// {
+//   return this.saveForm.get(this.customerId)
+// }
+
+ 
+>>>>>>> c34d520fa31c064e2c0386da492b055a901b00dd
