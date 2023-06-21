@@ -6,7 +6,11 @@
           <div class="card rounded-3">
             
             <div class="card-body p-4 p-md-5">
+<<<<<<< HEAD
+              <form class="px-md-2" [formGroup]="saveCustomer">
+=======
               <form class="px-md-2" [formGroup]="saveCustomer" (ngSubmit)="saveCustomerData()" >
+>>>>>>> c34d520fa31c064e2c0386da492b055a901b00dd
               <!-- first Form of Customer Details -->
                 <div *ngIf="step == 0">
               
@@ -18,14 +22,18 @@
                       <div class="form-outline">
                         <input type="text" id="firstName" formControlName="customerFirstName" class="form-control form-control-lg" />
                         <label class="form-label" for="firstName">First Name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="firstName && firstName.invalid && firstName.touched">This field is required</span>
                       </div>
     
                     </div>
                     <div class="col-md-4 mb-4">
     
                       <div class="form-outline">
-                        <input type="text" id="lastName" formControlName="customerMiddleName" class="form-control form-control-lg" />
-                        <label class="form-label" for="lastName">Middle Name</label>
+                        <input type="text" id="middleName" formControlName="customerMiddleName" class="form-control form-control-lg" />
+                        <label class="form-label" for="middle">Middle Name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="middleName && middleName.invalid && middleName.touched">This field is required</span>
                       </div>
     
                     </div>
@@ -34,6 +42,8 @@
                         <div class="form-outline">
                           <input type="text" id="lastName" formControlName="customerLastName" class="form-control form-control-lg" />
                           <label class="form-label" for="lastName">Last Name</label>
+                          <br>
+                        <span style="color: red;" *ngIf="lastName && lastName.invalid && lastName.touched">This field is required</span>
                         </div>
       
                       </div>
@@ -46,6 +56,8 @@
                     <div class="form-outline datepicker">
                       <input type="date" class="form-control" formControlName="customerDateOfBirth" id="exampleDatepicker1" />
                       <label for="exampleDatepicker1" class="form-label">Birthday</label>
+                      <br>
+                        <span style="color: red;" *ngIf="date && date.invalid && date.touched">This field is required</span>
                     </div>
   
                   </div>
@@ -57,18 +69,24 @@
                       <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="femaleGender"
                         value="option1" checked />
                       <label class="form-check-label" for="femaleGender">Female</label>
+                      <br>
+                        <span style="color: red;" *ngIf="femaleGender && femaleGender.invalid && femaleGender.touched">This field is required</span>
                     </div>
   
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="maleGender"
                         value="option2" />
                       <label class="form-check-label" for="maleGender">Male</label>
+                      <br>
+                        <span style="color: red;" *ngIf="maleGender && maleGender.invalid && maleGender.touched">This field is required</span>
                     </div>
   
                     <div class="form-check form-check-inline">
                       <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="otherGender"
                         value="option3" />
                       <label class="form-check-label" for="otherGender">Other</label>
+                      <br>
+                        <span style="color: red;" *ngIf="otherGender && otherGender.invalid && otherGender.touched">This field is required</span>
                     </div>
   
                   </div>
@@ -81,6 +99,8 @@
                       <div class="form-outline">
                         <input type="tel" id="mobileno" formControlName="customerMobileNumber" class="form-control form-control-lg" />
                         <label class="form-label" for="mobileno">Mobile No</label>
+                        <br>
+                        <span style="color: red;" *ngIf="customerMobileNumber && customerMobileNumber.invalid && customerMobileNumber.touched">This field is required</span>
                       </div>
     
                     </div>
@@ -89,6 +109,8 @@
                       <div class="form-outline">
                         <input type="tel"  formControlName="customerAdditionalMobileNumber" class="form-control form-control-lg" />
                         <label class="form-label">Additional Mobile No</label>
+                        <br>
+                        <span style="color: red;" *ngIf="customerAdditionalMobileNumber && customerAdditionalMobileNumber.invalid && customerAdditionalMobileNumber.touched">This field is required</span>
                       </div>
     
                     </div>
@@ -99,6 +121,9 @@
                       <div class="form-outline">
                         <input type="text" formControlName="customerPanCard" class="form-control form-control-lg" />
                         <label class="form-label" >PanCard No</label>
+                        <br>
+                        <span style="color: red;" *ngIf="customerPanCard && customerPanCard.invalid && customerPanCard.touched">This field is required</span>
+                        
                       </div>
     
                     </div>
@@ -107,6 +132,8 @@
                       <div class="form-outline">
                         <input type="number" formControlName="customerAdharNumber"  class="form-control form-control-lg" />
                         <label class="form-label">Adhar No</label>
+                        <br>
+                        <span style="color: red;" *ngIf="customerAdharNumber && customerAdharNumber.invalid && customerAdharNumber.touched">This field is required</span>
                       </div>
     
                     </div>
@@ -118,6 +145,8 @@
                       <div class="form-outline">
                         <input type="text" formControlName="customerQualification" class="form-control form-control-lg" />
                         <label class="form-label" >Qualification</label>
+                        <br>
+                        <span style="color: red;" *ngIf="customerQualification && customerQualification.invalid && customerQualification.touched">This field is required</span>
                       </div>
     
                     </div>
@@ -126,6 +155,8 @@
                         <div class="form-outline">
                             <input type="email" id="emailAddress" formControlName="customerEmailId" class="form-control form-control-lg" />
                             <label class="form-label" for="emailAddress">Email</label>
+                            <br>
+                        <span style="color: red;" *ngIf="customerEmailId && customerEmailId.invalid && customerEmailId.touched">This field is required</span>
                           </div>
     
                     </div>
@@ -137,6 +168,8 @@
                     <div class="form-outline">
                       <input type="number" formControlName="customerTotalLoanRequired" class="form-control" />
                       <label class="form-label" >Total Loan Required</label>
+                      <br>
+                        <span style="color: red;" *ngIf="customerTotalLoanRequired && customerTotalLoanRequired.invalid && customerTotalLoanRequired.touched">This field is required</span>
                     </div>
   
                   </div>
@@ -153,6 +186,8 @@
                   <div class="form-outline mb-4">
                     <input type="number" formControlName="customerAddressId" class="form-control" />
                     <label class="form-label">Address Id</label>
+                    <br>
+                        <span style="color: red;" *ngIf="customerAddressId && customerAddressId.invalid && customerAddressId.touched">This field is required</span>
                   </div>
                   <div formGroupName="permanentAddress">
                     <!-- permanent address group -->
@@ -162,12 +197,16 @@
                       <div class="form-outline">
                         <input type="number" formControlName="permanentAddressId"   class="form-control form-control-lg" />
                         <label class="form-label">Permanent Address Id</label>
+                        <br>
+                        <span style="color: red;" *ngIf="permanentAddressId && permanentAddressId.invalid && permanentAddressId.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="number" formControlName="permanentHouseNumber"  class="form-control form-control-lg" />
                         <label class="form-label">House Number</label>
+                        <br>
+                        <span style="color: red;" *ngIf="permanentHouseNumber && permanentHouseNumber.invalid && permanentHouseNumber.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -176,12 +215,16 @@
                       <div class="form-outline">
                         <input type="text" formControlName="permanentStreetName" class="form-control form-control-lg" />
                         <label class="form-label">Street Name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="permanentStreetName && permanentStreetName.invalid && permanentStreetName.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="text" formControlName="permanentAreaName" class="form-control form-control-lg" />
                         <label class="form-label">Area Name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="permanentAreaName && permanentAreaName.invalid && permanentAreaName.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -194,18 +237,22 @@
                         <option value="3">Goa</option>
                         <option value="4">Uttar Pradesh</option>
                         <option value="5">Madhya Pradesh</option>
+                        <br>
+                        <span style="color: red;" *ngIf="permanentState && permanentState.invalid && permanentState.touched">This field is required</span>
                       </select>
   
                     </div>
                     <div class="col-md-6 mb-4">
   
-                      <select class="select" formControlName="permanentState">
+                      <select class="select" formControlName="permanentDistrict">
                         <option value="1">Select District</option>
                         <option value="2">Akola</option>
                         <option value="3">Amravati</option>
                         <option value="4">Nagpur</option>
                         <option value="5">Pune</option>
                         <option value="5">Mumbai</option>
+                        <br>
+                        <span style="color: red;" *ngIf="permanentDistrict && permanentDistrict.invalid && permanentDistrict.touched">This field is required</span>
                       </select>
   
                     </div>
@@ -215,12 +262,16 @@
                       <div class="form-outline">
                         <input type="text" formControlName="permanentCityName" class="form-control form-control-lg" />
                         <label class="form-label">City Name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="permanentCityName && permanentCityName.invalid && permanentCityName.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="number" formControlName="permanentPincode" class="form-control form-control-lg" />
                         <label class="form-label">pincode</label>
+                        <br>
+                        <span style="color: red;" *ngIf="permanentPincode && permanentPincode.invalid && permanentPincode.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -237,12 +288,16 @@
                       <div class="form-outline">
                         <input type="number" formControlName="localAddressId"  class="form-control form-control-lg" />
                         <label class="form-label">Local Address Id</label>
+                        <br>
+                        <span style="color: red;" *ngIf="localAddressId && localAddressId.invalid && localAddressId.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="number" formControlName="localHouseNumber" class="form-control form-control-lg" />
                         <label class="form-label">House Number</label>
+                        <br>
+                        <span style="color: red;" *ngIf="localHouseNumber && localHouseNumber.invalid && localHouseNumber.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -251,12 +306,16 @@
                       <div class="form-outline">
                         <input type="text"  formControlName="localStreetName" class="form-control form-control-lg" />
                         <label class="form-label">Street Name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="localStreetName && localStreetName.invalid && localStreetName.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="text" formControlName="localAreaName" class="form-control form-control-lg" />
                         <label class="form-label">Area Name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="localAreaName && localAreaName.invalid && localAreaName.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -269,6 +328,8 @@
                         <option value="3">Goa</option>
                         <option value="4">Uttar Pradesh</option>
                         <option value="5">Madhya Pradesh</option>
+                        <br>
+                        <span style="color: red;" *ngIf="localState && localState.invalid && localState.touched">This field is required</span>
                       </select>
   
                     </div>
@@ -281,6 +342,8 @@
                         <option value="4">Nagpur</option>
                         <option value="5">Pune</option>
                         <option value="5">Mumbai</option>
+                        <br>
+                        <span style="color: red;" *ngIf="localDistrict && localDistrict.invalid && localDistrict.touched">This field is required</span>
                       </select>
   
                     </div>
@@ -290,12 +353,16 @@
                       <div class="form-outline">
                         <input type="text" formControlName="localCityName" class="form-control form-control-lg" />
                         <label class="form-label">City Name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="localCityName && localCityName.invalid && localCityName.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="number" formControlName="localPincode" class="form-control form-control-lg" />
                         <label class="form-label">pincode</label>
+                        <br>
+                        <span style="color: red;" *ngIf="localPincode && localPincode.invalid && localPincode.touched">This field is required</span>
                       </div>
                     </div>
                    
@@ -312,12 +379,16 @@
                       <div class="form-outline">
                         <input type="number" formControlName="accountId" class="form-control form-control-lg" />
                         <label class="form-label" >Account Id</label>
+                        <br>
+                        <span style="color: red;" *ngIf="accountId && accountId.invalid && accountId.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="number" formControlName="accountNumber" class="form-control form-control-lg" />
                         <label class="form-label">Account Number</label>
+                        <br>
+                        <span style="color: red;" *ngIf="accountNumber && accountNumber.invalid && accountNumber.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -326,12 +397,16 @@
                       <div class="form-outline">
                         <input type="text" formControlName="accountHolderName" class="form-control form-control-lg" />
                         <label class="form-label">Account Holder Name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="accountHolderName && accountHolderName.invalid && accountHolderName.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="text" formControlName="accountType"  class="form-control form-control-lg" />
                         <label class="form-label">Account Type</label>
+                        <br>
+                        <span style="color: red;" *ngIf="accountType && accountType.invalid && accountType.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -340,12 +415,16 @@
                       <div class="form-outline">
                         <input type="text" formControlName="bankName"  class="form-control form-control-lg" />
                         <label class="form-label">Bank Name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="bankName && bankName.invalid && bankName.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="text" formControlName="ifscCode" class="form-control form-control-lg" />
                         <label class="form-label">IFSC Code</label>
+                        <br>
+                        <span style="color: red;" *ngIf="iFSCCode && iFSCCode.invalid && iFSCCode.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -357,12 +436,16 @@
                       <div class="form-outline">
                         <input type="number" formControlName="guarantorId" class="form-control form-control-lg" />
                         <label class="form-label">Gurantor Id</label>
+                        <br>
+                        <span style="color: red;" *ngIf="guarantorId && guarantorId.invalid && guarantorId.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="text" formControlName="guarantorName"  class="form-control form-control-lg" />
                         <label class="form-label">Gurantor Name</label>
+                        <br>
+                        <span style="color: red;" *ngIf="guarantorName && guarantorName.invalid && guarantorName.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -371,12 +454,16 @@
                       <div class="form-outline">
                         <input type="date" formControlName="guarantorDateOfBirth" class="form-control form-control-lg" />
                         <label class="form-label">Birthday</label>
+                        <br>
+                        <span style="color: red;" *ngIf="guarantorDateOfBirth && guarantorDateOfBirth.invalid && guarantorDateOfBirth.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="text" formControlName="guarantorRelationshipWithCustomer" class="form-control form-control-lg" />
                         <label class="form-label" >Relationship With Customer</label>
+                        <br>
+                        <span style="color: red;" *ngIf="guarantorRelationshipWithCustomer && guarantorRelationshipWithCustomer.invalid && guarantorRelationshipWithCustomer.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -385,12 +472,16 @@
                       <div class="form-outline">
                         <input type="tel" formControlName="guarantorMobileNumber" class="form-control form-control-lg" />
                         <label class="form-label">Mobile Number</label>
+                        <br>
+                        <span style="color: red;" *ngIf="guarantorMobileNumber && guarantorMobileNumber.invalid && guarantorMobileNumber.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <input type="number" formControlName="guarantorAdharCardNo"  class="form-control form-control-lg" />
                         <label class="form-label">AdharCard Number</label>
+                        <br>
+                        <span style="color: red;" *ngIf="guarantorAdharCardNo && guarantorAdharCardNo.invalid && guarantorAdharCardNo.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -399,12 +490,16 @@
                       <div class="form-outline">
                         <input type="text" formControlName="guarantorJobDetails" class="form-control form-control-lg" />
                         <label class="form-label">Occupation</label>
+                        <br>
+                        <span style="color: red;" *ngIf="guarantorJobDetails && guarantorJobDetails.invalid && guarantorJobDetails.touched">This field is required</span>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <textarea  class="form-control form-control-lg" formControlName="guarantorAddress" ></textarea>
                         <label class="form-label">Address</label>
+                        <br>
+                        <span style="color: red;" *ngIf="guarantorAddress && guarantorAddress.invalid && guarantorAddress.touched">This field is required</span>
                       </div>
                     </div>
                   </div>
@@ -418,6 +513,8 @@
                     <div class="form-outline mb-4">
                       <input type="number"  class="form-control" />
                       <label class="form-label">Document Id</label>
+                      <br>
+                        <span style="color: red;" *ngIf="documents && documents.invalid && documents.touched">This field is required</span>
                     </div>
                     
                       <div class="row">
